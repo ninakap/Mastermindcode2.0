@@ -1,4 +1,4 @@
-package codeBreaker;
+package Mastermindcode2;
 
 public class classes {
 
