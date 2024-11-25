@@ -42,19 +42,19 @@ public class classes {
             	 krakerrijvakken[i]=sc.nextInt();
              }
              
-			if (krakerrijvakken[0] == pins[0]) {
+			if (krakerrijvakken[0] == geheimeVaken[0]) {
 
 				System.out.println("zwart");
 
-			} else if (krakerrijvakken[0] == pins[]) {
+			} else if (krakerrijvakken[0] == geheimeVaken[0]) {
 
 				System.out.println("wit");
 
-			} else if (krakerrijvakken[0] == specialeVak3) {
+			} else if (krakerrijvakken[0] == geheimeVaken[0]) {
 
 				System.out.println("wit");
 
-			} else if(krakerrijvakken[0] == specialeVak4) {
+			} else if(krakerrijvakken[0] == geheimeVaken[0]) {
 
 				System.out.println("wit");
 
@@ -64,19 +64,19 @@ public class classes {
 
 			}
 
-			if (krakerrijvakken[0] == specialeVak2) {
+			if (krakerrijvakken[0] == geheimeVaken[2]) {
 
 				System.out.println("zwart");
 
-			} else if (krakerrijvakken[0] == specialeVak1) {
+			} else if (krakerrijvakken[0] == geheimeVaken[2]) {
 
 				System.out.println("wit");
 
-			} else if(krakerrijvakken[0]== specialeVak3) {
+			} else if(krakerrijvakken[0]== geheimeVaken[2]) {
 
 				System.out.println("wit");
 
-			} else if (krakerrijvakken[0]== specialeVak4) {
+			} else if (krakerrijvakken[0]== geheimeVaken[2]) {
 
 				System.out.println("wit");
 
@@ -86,19 +86,19 @@ public class classes {
 
 			}
 
-			if (krakerrijvakken[0] == specialeVak3) {
+			if (krakerrijvakken[0] == geheimeVaken[3]) {
 
 				System.out.println("zwart");
 
-			} else if (krakerrijvakken[0] == specialeVak2) {
+			} else if (krakerrijvakken[0] == geheimeVaken[3]) {
 
 				System.out.println("wit");
 
-			} else if (krakerrijvakken[0]== specialeVak1) {
+			} else if (krakerrijvakken[0]== geheimeVaken[3]) {
 
 				System.out.println("wit");
 
-			} else if (krakerrijvakken[0] == specialeVak4) {
+			} else if (krakerrijvakken[0] == geheimeVaken[3]) {
 
 				System.out.println("wit");
 
@@ -108,19 +108,19 @@ public class classes {
 
 			}
 
-			if (krakerrijvakken[0]== specialeVak4) {
+			if (krakerrijvakken[0]== geheimeVaken[1]) {
 
 				System.out.println("zwart");
 
-			} else if (krakerrijvakken[0]== specialeVak2) {
+			} else if (krakerrijvakken[0]== pins[1]) {
 
 				System.out.println("wit");
 
-			} else if(krakerrijvakken[0]== specialeVak3) {
+			} else if(krakerrijvakken[0]== pins[1]) {
 
 				System.out.println("wit");
 
-			} else if (krakerrijvakken[0] == specialeVak1) {
+			} else if (krakerrijvakken[0] == pins[1]) {
 
 				System.out.println("wit");
 
@@ -130,15 +130,15 @@ public class classes {
 
 			}
 
-			if (krakerRijVak1 == specialeVak1 && krakerRijVak2 == specialeVak2 && krakerRijVak3 == specialeVak3
-					&& krakerRijVak4 == specialeVak4) {
+			if (krakerrijvakken[0] == pins[0]&& krakerrijvakken[0] == pins[2] && krakerrijvakken[0] == pins[3]
+					&& krakerrijvakken[0]== pins[1]) {
 				System.out.println("Gefeliciteerd! Je hebt gewonnen !");
 				break;
 			}
 
 			if (poginen == 9) {
-				System.out.println("Oops, je hebt niet gewonnen .De juiste code was: " + specialeVak1 + specialeVak2
-						+ specialeVak3 + specialeVak4);
+				System.out.println("Oops, je hebt niet gewonnen .De juiste code was: " + pins[0] + pins[2]
+						+ pins[3]+ pins[4]);
 			}
  
 		}
