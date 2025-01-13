@@ -2,87 +2,51 @@ package Mastermindcode2;
 
 import java.util.Scanner;
 
-public class classes {
+public class Classes {
 
-	
-	public static void main(String[] args) {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        FunctionBevatWaarde functionBevatWaarde = new FunctionBevatWaarde();
 
-		System.out.println("Voer een code in:");
-		 Scanner sc = new Scanner(System.in);
-//dit is de start punt van mijn progamma met de scanner.
-		// TODO Auto-generated method stub
-//		int roodPin1 = 1;
-//		int geelPin2 = 2;
-//		int groenPin3 = 3;
-//		int paarsPin4 = 4;
-//		int oranjePin5 = 5;
-        
-	   int[] pins = {1,2,3,4,5};
-				
-				
-//		int zwartPin6 = 6;
-//		int witPin7 = 7;
-		
-       int[]makerPins= {6,7};
-       
-//       int specialeVak1 = roodPin1;
-//		int specialeVak2 = groenPin3;
-//		int specialeVak3 = paarsPin4;
-//		int specialeVak4 = geelPin2;
-//    
-		 int[]geheimeVaken= {pins[0],pins[2],pins[3],pins[1]};
+        int[] pins = {1, 2, 3, 4, 5};
+        int[] geheimeVakken = {pins[0], pins[2], pins[3], pins[1]}; // {1, 3, 4, 2}
 
-		for (int poginen = 0; poginen <= 9; poginen++) {
-			System.out.println("Pogingen:" + ' ' + poginen);
+        for (int pogingen = 0; pogingen < 10; pogingen++) {
+            System.out.println("Poging: " + (pogingen + 1));
 
-			int []krakerrijvakken=new int[4];		
-		
-             for(int i=0; i< krakerrijvakken.length; i++)
-             {
-            	 krakerrijvakken[i]=sc.nextInt();
-             }
-          
-             for (int k = 0; k < krakerrijvakken.length; k++) {
-            	   
-            	    if (krakerrijvakken[k] == geheimeVaken[k]) {
-            	        System.out.println("zwart");
-            	        continue; 
-            	    }
-
-            	   
-            	    int j;
-            	    for (j = 0; j < geheimeVaken.length; j++) {
-            	        if (krakerrijvakken[k] == geheimeVaken[j]) {
-            	            System.out.println("wit");
-            	            break;
-            	        }
-            	    }
-            	    if (j == geheimeVaken.length) {
-            	        System.err.println("niet aanwezig");
-            	    }
-            
+            int[] krakerRijVakken = new int[4];
+         
+            for (int i = 0; i < krakerRijVakken.length; i++) {
+                System.out.println("Voer een cijfer in (1-5): "); 
+                krakerRijVakken[i] = sc.nextInt();
+            }
 
 
+            boolean gewonnen = true;
 
+            for (int k = 0; k < krakerRijVakken.length; k++) {
+                if (krakerRijVakken[k] == geheimeVakken[k]) {
+                    System.out.println("zwart");
+                } else if (functionBevatWaarde.bevatWaarde(geheimeVakken, krakerRijVakken[k])) {
+                    System.out.println("wit");
+                    gewonnen = false;
+                } else {
+                    System.out.println("niet aanwezig");
+                    gewonnen = false;
+                }
+            }
 
-			}
-             }
+            if (gewonnen) {
+                System.out.println("Gefeliciteerd! Je hebt gewonnen!");
+                break;
+            }
 
-
-			if (krakerrijvakken[] == geheimeVaken[0]&& krakerrijvakken[2] == geheimeVaken[2] && krakerrijvakken[3] == geheimeVaken[3]
-					&& krakerrijvakken[1]== geheimeVaken[1]) {
-				System.out.println("Gefeliciteerd! Je hebt gewonnen !");
-				break;
-			}
-
-			if (poginen == 9) {
-				System.out.println("Oops, je hebt niet gewonnen .De juiste code was: " + geheimeVaken[0] + geheimeVaken[2]
-						+ geheimeVaken[3]+ geheimeVaken[4]);
-			}
- 
-		}
-		sc.close();
-
-	}
-
+            if (pogingen == 9) {
+                System.out.println("Oops, je hebt niet gewonnen. De juiste code was: "
+                        + geheimeVakken[0] + " " + geheimeVakken[1] + " "
+                        + geheimeVakken[2] + " " + geheimeVakken[3]);
+            }
+        }
+        sc.close();
+    }
 }
