@@ -15,9 +15,8 @@ public class Classes {
             System.out.println("Poging: " + (pogingen + 1));
 
             int[] krakerRijVakken = new int[4];
-         
+            System.out.println("Voer een cijfer in (1-5): "); 
             for (int i = 0; i < krakerRijVakken.length; i++) {
-                System.out.println("Voer een cijfer in (1-5): "); 
                 krakerRijVakken[i] = sc.nextInt();
             }
 
