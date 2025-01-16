@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class FunctionBevatWaarde{
 
-    // Maak een hardcoded geheime code
+    // Mhardcoded geheime code
     public static int[] maakGeheimeCode() {
         return new int[]{1, 3, 4, 2}; // Hardcoded geheime code
     }
 
-    // Vraag een invoer van 4 cijfers van de gebruiker
+    // invoer van 4 cijfers van de gebruiker
     public static int[] vraagInvoer(Scanner sc) {
         int[] invoer = new int[4];
         System.out.println("Voer 4 cijfers in (1-5): ");
