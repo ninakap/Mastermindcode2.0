@@ -10,7 +10,7 @@ public class Classes{
        
         int[] geheimeCode = FunctionBevatWaarde.maakGeheimeCode();
 
-        // Start het spel
+        // Start de spel
         FunctionBevatWaarde.startSpel(sc, geheimeCode);
 
         sc.close();

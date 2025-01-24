@@ -4,17 +4,32 @@ import java.util.Scanner;
 
 public class FunctionBevatWaarde{
 
-    // Mhardcoded geheime code
+    // hardcoded geheime code
     public static int[] maakGeheimeCode() {
         return new int[]{1, 3, 4, 2}; // Hardcoded geheime code
-    }
-
+        }
+    
     // invoer van 4 cijfers van de gebruiker
     public static int[] vraagInvoer(Scanner sc) {
         int[] invoer = new int[4];
         System.out.println("Voer 4 cijfers in (1-5): ");
         for (int i = 0; i < invoer.length; i++) {
-            invoer[i] = sc.nextInt();
+            while (true) { 
+                try {
+                    System.out.print("Cijfer " + (i + 1) + ": ");
+                    invoer[i] = sc.nextInt();
+
+               
+                    if (invoer[i] < 1 || invoer[i] > 5) {
+                        System.out.println("Ongeldig cijfer. Voer een getal in tussen 1 en 5.");
+                    } else {
+                        break; 
+                    }
+                } catch (Exception e) {
+                    System.out.println("Ongeldig. Voer een getal in tussen 1 en 5.");
+                    sc.next(); 
+                }
+            }
         }
         return invoer;
     }
@@ -36,7 +51,7 @@ public class FunctionBevatWaarde{
         return gewonnen;
     }
 
-    // Check of een waarde in de geheime code zit
+    
     private static boolean bevatWaarde(int[] array, int waarde) {
         for (int num : array) {
             if (num == waarde) {
@@ -46,7 +61,7 @@ public class FunctionBevatWaarde{
         return false;
     }
 
-    // Start het spel
+    // Start de spel
     public static void startSpel(Scanner sc, int[] geheimeCode) {
         for (int poging = 1; poging <= 10; poging++) {
             System.out.println("Poging " + poging + ":");
