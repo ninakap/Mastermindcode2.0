@@ -13,18 +13,19 @@ public class FunctionBevatWaarde{
     public static int[] vraagInvoer(Scanner sc) {
         int[] invoer = new int[4];
         System.out.println("Voer 4 cijfers in (1-5): ");
-        for (int i = 0; i < invoer.length; i++) {
+    for (int i = 0; i < invoer.length; i++) {  
             while (true) { 
                 try {
                     System.out.print("Cijfer " + (i + 1) + ": ");
                     invoer[i] = sc.nextInt();
 
-               
-                    if (invoer[i] < 1 || invoer[i] > 5) {
+
+                    if (invoer[i] < 1 || invoer[i] > 5) {   
                         System.out.println("Ongeldig cijfer. Voer een getal in tussen 1 en 5.");
                     } else {
                         break; 
-                    }
+                    } 
+
                 } catch (Exception e) {
                     System.out.println("Ongeldig. Voer een getal in tussen 1 en 5.");
                     sc.next(); 
@@ -51,7 +52,7 @@ public class FunctionBevatWaarde{
         return gewonnen;
     }
 
-    
+//    kijk of er waarde is
     private static boolean bevatWaarde(int[] array, int waarde) {
         for (int num : array) {
             if (num == waarde) {
@@ -65,14 +66,14 @@ public class FunctionBevatWaarde{
     public static void startSpel(Scanner sc, int[] geheimeCode) {
         for (int poging = 1; poging <= 10; poging++) {
             System.out.println("Poging " + poging + ":");
-            
+
             int[] gok = vraagInvoer(sc);
 
             if (controleerCode(geheimeCode, gok)) {
                 System.out.println("Gefeliciteerd! Je hebt de code gekraakt!");
                 return;
             }
-
+                
             if (poging == 10) {
                 System.out.println("Helaas! Je hebt de geheime code niet geraden.");
                 System.out.println("De geheime code was: " + 
